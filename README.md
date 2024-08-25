@@ -1,5 +1,5 @@
 
-# Payments
+# Cinema
 
 API на Laravel для кинотеатра. 
 
