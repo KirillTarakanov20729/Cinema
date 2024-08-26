@@ -10,6 +10,24 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * @OA\Get (
+ *     path="/api/categories/index/{page}",
+ *     summary="Get all categories",
+ *     tags={"Categories"},
+ *
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="path",
+ *         required=true,
+ *     ),
+ *
+ *     @OA\Response(
+ *         response="200",
+ *         description="Get all categories",
+ *     )
+ * )
+ */
 class CategoryController extends Controller
 {
     public function __construct(private readonly CategoryService $service)

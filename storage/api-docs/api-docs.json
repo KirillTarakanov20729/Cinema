@@ -1,0 +1,197 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cinema API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/actors/index/{page}": {
+            "get": {
+                "tags": [
+                    "Actors"
+                ],
+                "summary": "Get all actors",
+                "operationId": "ffc0a5e4b57982a1972f1185a946522f",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all actors"
+                    }
+                }
+            }
+        },
+        "/api/categories/index/{page}": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get all categories",
+                "operationId": "bc80ac4ee004daa0e2f88f70495c3c25",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all categories"
+                    }
+                }
+            }
+        },
+        "/api/films/index/{page}": {
+            "get": {
+                "tags": [
+                    "Films"
+                ],
+                "summary": "Get all films",
+                "operationId": "7431d54666ef02261a0191b95d3be98d",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all films"
+                    }
+                }
+            }
+        },
+        "/api/payments/store": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "Store payment",
+                "operationId": "df0a21d082c8bab33141ce470ac08720",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "ticket_id": {
+                                        "description": "Ticket ID",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "user_id": {
+                                        "description": "User ID",
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Store payment"
+                    }
+                }
+            }
+        },
+        "/api/payments/redirect/{payment_uuid}": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "Redirect to payment",
+                "operationId": "5a98065d57fe46a136bf2c5baee27d27",
+                "parameters": [
+                    {
+                        "name": "payment_uuid",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Redirect to payment"
+                    }
+                }
+            }
+        },
+        "/api/tickets/index/{page}": {
+            "get": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Get all tickets",
+                "operationId": "bee215512825a94ca7f115a540355e89",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all tickets"
+                    }
+                }
+            }
+        },
+        "/api/users/index/{page}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all users",
+                "operationId": "8867e4defd9293063fab566dd4e98d1d",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all users"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Actors",
+            "description": "Actors"
+        },
+        {
+            "name": "Categories",
+            "description": "Categories"
+        },
+        {
+            "name": "Films",
+            "description": "Films"
+        },
+        {
+            "name": "Payments",
+            "description": "Payments"
+        },
+        {
+            "name": "Tickets",
+            "description": "Tickets"
+        },
+        {
+            "name": "Users",
+            "description": "Users"
+        }
+    ]
+}

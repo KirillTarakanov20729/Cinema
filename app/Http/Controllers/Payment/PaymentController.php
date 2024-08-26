@@ -18,6 +18,53 @@ use App\Http\Requests\Payment\StorePaymentRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+
+/**
+ * @OA\Post(
+ *     path="/api/payments/store",
+ *     summary="Store payment",
+ *     tags={"Payments"},
+ *
+ *     @OA\RequestBody(
+ *         @OA\MediaType(
+ *             mediaType="application/json",
+ *             @OA\Schema(
+ *                 @OA\Property(
+ *                     property="ticket_id",
+ *                     type="integer",
+ *                     description="Ticket ID",
+ *                     example=1
+ *                 ),
+ *                 @OA\Property(
+ *                     property="user_id",
+ *                     type="integer",
+ *                     description="User ID",
+ *                     example=1
+ *                 )
+ *             )
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response="201",
+ *         description="Store payment"
+ *     )
+ * )
+ *
+ * @OA\Get(
+ *     path="/api/payments/redirect/{payment_uuid}",
+ *     summary="Redirect to payment",
+ *     tags={"Payments"},
+ *     @OA\Parameter(
+ *         name="payment_uuid",
+ *         in="path",
+ *         required=true
+ *     ),
+ *     @OA\Response(
+ *         response="200",
+ *         description="Redirect to payment"
+ *     )
+ * ),
+ */
 class PaymentController extends Controller
 {
     private PaymentService $paymentService;
