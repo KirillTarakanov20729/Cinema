@@ -24,6 +24,7 @@ API на Laravel для кинотеатра.
  * Подключен Stripe для платежей
  * Event и Listener классы
  * Listener и отправка Notification сделана через Jobs
+ * Документация через Swagger
 
 
 ## Usage/Examples
