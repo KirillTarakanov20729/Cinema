@@ -28,13 +28,6 @@ readonly class FilmService
     public function getTicketsForFilm(ShowFilmDTO $data): Collection
     {
         try {
-            $this->repository->show($data);
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            throw $e;
-        }
-
-        try {
             return $this->repository->getTicketsForFilm($data);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
