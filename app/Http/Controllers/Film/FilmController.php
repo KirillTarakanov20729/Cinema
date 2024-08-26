@@ -12,6 +12,24 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * @OA\Get (
+ *     path="/api/films/index/{page}",
+ *     summary="Get all films",
+ *     tags={"Films"},
+ *
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="path",
+ *         required=true,
+ *     ),
+ *
+ *     @OA\Response(
+ *         response="200",
+ *         description="Get all films",
+ *     )
+ * )
+ */
 class FilmController extends Controller
 {
     public function __construct(private readonly FilmService $service)

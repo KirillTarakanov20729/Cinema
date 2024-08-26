@@ -9,6 +9,25 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+
+/**
+ * @OA\Get (
+ *     path="/api/tickets/index/{page}",
+ *     summary="Get all tickets",
+ *     tags={"Tickets"},
+ *
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="path",
+ *         required=true,
+ *     ),
+ *
+ *     @OA\Response(
+ *         response="200",
+ *         description="Get all tickets",
+ *     )
+ * )
+ */
 class TicketController extends Controller
 {
     public function __construct(readonly private TicketService $ticketService)
